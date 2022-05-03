@@ -5,5 +5,24 @@ Home Page
 {% endblock %}
 <!--Body-->
 {% block content %}
+<div class="container">
+    <h2 class="h3 mb-3 font-weight-normal">
+        CURRENT NEWS
+    </h2>
+    {% for article in articles %}
+    <div class="row row-cols-1 row-cols-md-1 g-4 d-flex">
+        <div class="col p-3">
+            <div class="card p-3">
+                <a href="{{article.url}}"><img src="{{article.urlToImage}}" alt="image" ></a>
+                <div class="card-body">
+                    <a href="{{article.url}}"><h3 class="card-title text-warning">{{article.title}}</h3></a>
+                    <a href="{{article.url}}"><p class="card-text text-bold text-dark fs-3"><strong>{{article.description}}</strong></p></a>
+                    <p class="card-text text-center text-info display-5">{{article.publisheAt}}</p>
+                </div>
+            </div>
+        </div>
 
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
