@@ -1,4 +1,3 @@
-from turtle import title
 import urllib.request,json
 from .models import Newsarticles
 
@@ -18,6 +17,7 @@ def get_news():
 
     with urllib.request.url(get_news_url) as url:
         get_news_data = url.read()
+        print(get_news_data)
         get_news_response = json.loads(get_news_data)
 
         news_results = None
