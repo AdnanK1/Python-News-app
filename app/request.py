@@ -15,7 +15,7 @@ def configure_request(app):
 def get_news():
     get_news_url = base_url.format(api_key)
 
-    with urllib.request.url(get_news_url) as url:
+    with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         print(get_news_data)
         get_news_response = json.loads(get_news_data)
